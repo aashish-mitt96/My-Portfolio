@@ -1,0 +1,315 @@
+.achievements-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-bottom: 34px;
+}
+
+/* =========================================
+   ACHIEVEMENTS — vertical timeline
+   (justified because the content is genuinely
+   chronological, not decoration for its own sake)
+========================================= */
+.achievements-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.achievements-grid:not(.certificates-grid) {
+  position: relative;
+  padding-left: 30px;
+}
+
+.achievements-grid:not(.certificates-grid)::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 11px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--orange-yellow-crayola) 45%, transparent),
+    color-mix(in srgb, var(--orange-yellow-crayola) 5%, transparent)
+  );
+}
+
+.achievement-card {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  background: var(--border-gradient-onyx);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.achievement-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: box-shadow 0.25s ease;
+}
+
+.achievement-card:not(.certificate-card)::after {
+  content: "";
+  position: absolute;
+  left: -23px;
+  top: 24px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--orange-yellow-crayola);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--orange-yellow-crayola) 18%, var(--smoky-black, #0f0f0f) 82%);
+}
+
+.achievement-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px hsla(0, 0%, 0%, 0.35);
+}
+
+.achievement-card:hover::before {
+  box-shadow: inset 0 0 0 1px
+    color-mix(in srgb, var(--orange-yellow-crayola) 35%, transparent);
+}
+
+.achievement-icon-box {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--eerie-black-1);
+  border: 1px solid color-mix(in srgb, var(--orange-yellow-crayola) 22%, transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: var(--orange-yellow-crayola);
+  box-shadow: var(--shadow-1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.achievement-card:hover .achievement-icon-box {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--orange-yellow-crayola) 14%, transparent),
+    var(--shadow-1);
+}
+
+.achievement-icon-box ion-icon {
+  --ionicon-stroke-width: 35px;
+}
+
+.achievement-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.achievement-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.achievement-title {
+  font-size: var(--fs-4);
+  font-weight: var(--fw-500);
+  line-height: 1.3;
+}
+
+.achievement-date {
+  color: var(--light-gray);
+  font-size: 0.74rem;
+  font-weight: var(--fw-400);
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--orange-yellow-crayola) 10%, transparent);
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.achievement-issuer {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  margin-bottom: 10px;
+}
+
+.achievement-description {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.65;
+  max-width: 62ch;
+}
+
+/* =========================================
+   CERTIFICATES — quiet, scannable rows
+   (deliberately not a repeat of the card kit
+   above, so the two sections read differently)
+========================================= */
+.certificates-header {
+  margin-top: 46px;
+  margin-bottom: 6px;
+}
+
+.certificates-grid {
+  gap: 0;
+}
+
+.certificate-card {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 10px;
+  padding: 16px 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--light-gray) 12%, transparent);
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.certificate-card::before {
+  display: none;
+}
+
+.certificate-card:last-child {
+  border-bottom: none;
+}
+
+.certificate-card:hover {
+  transform: none;
+  box-shadow: none;
+  background: color-mix(in srgb, var(--orange-yellow-crayola) 5%, transparent);
+}
+
+.certificate-card .achievement-icon-box {
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.certificate-card .achievement-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.certificate-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.certificate-main .achievement-title {
+  font-size: 0.98rem;
+}
+
+.certificate-main .achievement-issuer {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+.certificate-credential-id {
+  color: var(--light-gray-70);
+  font-size: 0.78rem;
+  font-weight: var(--fw-400);
+}
+
+.certificate-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.certificate-meta .achievement-date {
+  background: none;
+  padding: 0;
+  color: var(--light-gray-70);
+  font-size: 0.78rem;
+}
+
+.certificate-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: color-mix(in srgb, var(--orange-yellow-crayola) 12%, transparent);
+  color: var(--orange-yellow-crayola);
+  font-size: 0.78rem;
+  font-weight: var(--fw-500);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background 0.2s ease;
+}
+
+.certificate-link:hover {
+  background: color-mix(in srgb, var(--orange-yellow-crayola) 24%, transparent);
+}
+
+.certificate-link ion-icon {
+  font-size: 13px;
+}
+
+.certificate-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.certificate-skill-chip {
+  background: var(--eerie-black-1);
+  color: var(--light-gray);
+  font-size: 0.72rem;
+  font-weight: var(--fw-400);
+  padding: 3px 10px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-1);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (min-width: 580px) {
+  .achievement-icon-box {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .achievement-card:not(.certificate-card)::after {
+    top: 28px;
+  }
+
+  .achievement-card {
+    padding: 22px 25px;
+  }
+
+  .achievement-title {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 579px) {
+  .certificate-card .achievement-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .certificate-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,405 @@
+.sidebar {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+
+  margin-bottom: 15px;
+  max-height: 112px;
+  overflow: hidden;
+  transition: var(--transition-2);
+}
+
+.sidebar.active {
+  max-height: 405px;
+}
+
+.sidebar-info {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+/* =========================================
+   AVATAR
+   Crisp border + a soft, low-opacity accent glow
+   ring around it (not a hard second border, so it
+   doesn't read as "thick" the way the old margin
+   trick did).
+========================================= */
+.avatar-box {
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--onyx);
+  box-shadow: var(--shadow-2), 0 0 0 4px hsla(141, 94%, 73%, 0.08);
+  transition: var(--transition-1);
+}
+
+.avatar-box:hover {
+  border-color: var(--vegas-gold);
+  box-shadow: var(--shadow-2), 0 0 0 4px hsla(141, 94%, 73%, 0.16);
+}
+
+.avatar-box img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.info-content .name {
+  position: relative;
+  display: inline-block;
+  color: var(--white-2);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+}
+
+.info-content .name::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--text-gradient-yellow);
+  border-radius: 2px;
+}
+
+.info-content .title {
+  color: var(--white-1);
+  background: var(--onyx);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  width: max-content;
+  padding: 3px 12px;
+  border-radius: 8px;
+}
+
+.info_more-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  border-radius: 0 15px;
+  font-size: 13px;
+  color: var(--orange-yellow-crayola);
+  background: var(--border-gradient-onyx);
+  padding: 10px;
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-1);
+  z-index: 1;
+}
+
+.info_more-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--bg-gradient-jet);
+  transition: var(--transition-1);
+  z-index: -1;
+}
+
+.info_more-btn:focus,
+.info_more-btn:hover {
+  background: var(--bg-gradient-yellow-1);
+}
+
+.info_more-btn:focus::before,
+.info_more-btn:hover::before {
+  background: var(--bg-gradient-yellow-2);
+}
+
+.info_more-btn span {
+  display: none;
+}
+
+.sidebar-info_more {
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-2);
+}
+
+.sidebar.active .sidebar-info_more {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contacts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.contact-item {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 6px;
+  margin: -6px;
+  border-radius: 10px;
+  transition: var(--transition-1);
+}
+
+.contact-item:hover {
+  background: var(--onyx);
+}
+
+.contact-item:hover .icon-box {
+  color: var(--vegas-gold);
+}
+
+.contact-info {
+  max-width: calc(100% - 46px);
+  width: calc(100% - 46px);
+}
+
+.contact-title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.contact-info :is(.contact-link, time, address) {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+}
+
+.contact-link {
+  transition: var(--transition-1);
+}
+
+.contact-item:hover .contact-link {
+  color: var(--orange-yellow-crayola);
+}
+
+.contact-small {
+  font-size: 13px !important;
+}
+
+.contact-info address {
+  font-style: normal;
+}
+
+/* =========================================
+   SOCIALS
+   Chip-style buttons instead of bare icons.
+========================================= */
+.social-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 4px;
+}
+
+.social-item .social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--onyx);
+  color: var(--light-gray-70);
+  font-size: 17px;
+  transition: var(--transition-1);
+}
+
+.social-item .social-link:hover {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+}
+
+/* Used for brand icons Ionicons doesn't ship (e.g. LeetCode).
+   The external SVG is used purely as a mask shape, filled with
+   currentColor, so it sizes and recolors exactly like the
+   ion-icon-based social icons above — regardless of whatever
+   color happens to be baked into the source SVG itself. */
+.social-icon-mask {
+  display: block;
+  width: 17px;
+  height: 17px;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (min-width: 580px) {
+  .sidebar {
+    width: 520px;
+    margin-inline: auto;
+    padding: 30px;
+
+    max-height: 180px;
+    margin-bottom: 30px;
+  }
+
+  .sidebar.active {
+    max-height: 700px;
+  }
+
+  .sidebar-info {
+    gap: 25px;
+  }
+
+  .avatar-box {
+    border-radius: 20px;
+    border-width: 3px;
+    box-shadow: var(--shadow-2), 0 0 0 5px hsla(141, 94%, 73%, 0.08);
+  }
+
+  .avatar-box:hover {
+    box-shadow: var(--shadow-2), 0 0 0 5px hsla(141, 94%, 73%, 0.16);
+  }
+
+  .avatar-box img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .info-content .name {
+    margin-bottom: 15px;
+  }
+
+  .info-content .title {
+    padding: 5px 18px;
+  }
+
+  .info_more-btn {
+    top: -30px;
+    right: -30px;
+    padding: 10px 15px;
+  }
+
+  .info_more-btn span {
+    display: block;
+    font-size: var(--fs-8);
+  }
+
+  .info_more-btn ion-icon {
+    display: none;
+  }
+
+  .contacts-list {
+    gap: 8px;
+  }
+
+  .contact-info {
+    max-width: calc(100% - 64px);
+    width: calc(100% - 64px);
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 700px;
+  }
+
+  .contacts-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 950px;
+    box-shadow: var(--shadow-5);
+  }
+}
+
+@media (min-width: 1250px) {
+  .sidebar {
+    position: sticky;
+    top: 60px;
+    width: auto;
+    max-height: max-content;
+    height: 100%;
+    margin-bottom: 0;
+    padding-top: 60px;
+    z-index: 1;
+  }
+
+  .sidebar-info {
+    flex-direction: column;
+  }
+
+  .avatar-box {
+    border-radius: 24px;
+    border-width: 3px;
+    box-shadow: var(--shadow-2), 0 0 0 6px hsla(141, 94%, 73%, 0.08);
+  }
+
+  .avatar-box:hover {
+    box-shadow: var(--shadow-2), 0 0 0 6px hsla(141, 94%, 73%, 0.16);
+  }
+
+  .avatar-box img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .info-content {
+    text-align: center;
+  }
+
+  .info-content .name {
+    white-space: nowrap;
+  }
+
+  .info-content .name::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .info-content .title {
+    margin: auto;
+  }
+
+  .info_more-btn {
+    display: none;
+  }
+
+  .sidebar-info_more {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .contacts-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info :is(.contact-link) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .contact-info :is(.contact-link, time, address) {
+    --fs-7: 14px;
+    font-weight: var(--fw-300);
+  }
+
+  .social-list {
+    justify-content: center;
+  }
+}
