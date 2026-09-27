@@ -1,21 +1,23 @@
 import "../styles/Experience.css";
 
+
 interface ExperienceEntry {
-  id: string;
-  role: string;
-  org: string;
+  id:       string;
+  role:     string;
+  org:      string;
   duration: string;
   current?: boolean;
-  points: string[];
+  points:   string[];
 }
+
 
 const experience: ExperienceEntry[] = [
   {
-    id: "canopux",
-    role: "Backend Engineer",
-    org: "Canopux",
-    duration: "Jan 2025 – Present",
-    current: true,
+    id:       "canopux",
+    role:     "Backend Engineer",
+    org:      "Canopux",
+    duration: "Jan 2025 - Present",
+    current:  true,
     points: [
       "Engineered a Social Feed Microservice with 5+ REST endpoints covering feed retrieval, post creation, likes, and user interactions, integrated into a distributed system via an API Gateway.",
       "Designed the feed schema in PostgreSQL, integrating with 2+ existing tables through a modular Node.js backend.",
@@ -24,19 +26,19 @@ const experience: ExperienceEntry[] = [
     ],
   },
   {
-    id: "dt-digisol",
-    role: "Freelance Backend Developer",
-    org: "DT Digisol",
-    duration: "Jan 2026 – Feb 2026",
+    id:       "dt-digisol",
+    role:     "Freelance Backend Developer",
+    org:      "DT Digisol",
+    duration: "Jan 2026 - Feb 2026",
     points: [
       "Implemented a Node.js invoicing system with branded templates, auto-generated via Razorpay webhooks.",
       "Delivered invoices instantly to customers via Nodemailer, syncing real-time payment and customer data.",
     ],
   },
   {
-    id: "indocrypt",
-    role: "Web Development Contributor",
-    org: "IndoCrypt 2025",
+    id:      "indocrypt",
+    role:    "Web Development Contributor",
+    org:     "IndoCrypt 2025",
     duration: "May 2025",
     points: [
       "Shipped responsive React UI components for IndoCrypt 2025's official conference website, driving 1000+ visits.",
@@ -45,12 +47,15 @@ const experience: ExperienceEntry[] = [
   },
 ];
 
+
 interface ExperienceProps {
   isActive: boolean;
 }
 
+
 const Experience = ({ isActive }: ExperienceProps) => {
   return (
+    
     <article className={`experience${isActive ? " active" : ""}`} data-page="experience">
       <header>
         <h2 className="h2 article-title">Experience</h2>
@@ -58,7 +63,7 @@ const Experience = ({ isActive }: ExperienceProps) => {
 
       <section className="experience-text">
         <p>
-          An overview of my professional experience, technical contributions, and the systems I've helped build.
+          An overview of my professional experience, technical contributions and the systems I've helped build.
         </p>
       </section>
 

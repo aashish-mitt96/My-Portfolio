@@ -24,7 +24,9 @@
   position: relative;
   z-index: 1;
   height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-card::before {
@@ -32,6 +34,8 @@
   position: absolute;
   inset: 1px;
   background: var(--bg-gradient-jet);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
   border-radius: inherit;
   z-index: -1;
 }
@@ -55,16 +59,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--orange-yellow-crayola) 12%, var(--eerie-black-1));
-  border: 1px solid color-mix(in srgb, var(--orange-yellow-crayola) 25%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--orange-yellow-crayola) 12%,
+    var(--eerie-black-1)
+  );
+  border: 1px solid
+    color-mix(in srgb, var(--orange-yellow-crayola) 25%, transparent);
   color: var(--orange-yellow-crayola);
   font-size: 17px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-card:hover .project-avatar {
   transform: scale(1.06);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--orange-yellow-crayola) 14%, transparent);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--orange-yellow-crayola) 14%, transparent);
 }
 
 .project-title {
@@ -135,9 +147,6 @@
   transform: translateX(4px);
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
 @media (min-width: 580px) {
   .project-list {
     gap: 25px;

@@ -1,18 +1,19 @@
 import "../styles/Projects.css";
 
+
 interface Project {
-  id: string;
-  title: string;
+  id:          string;
+  title:       string;
   description: string;
-  tech: string[];
-  link: string;
-  icon: string;
+  tech:        string[];
+  link:        string;
+  icon:        string;
 }
 
 
 const projects: Project[] = [
   {
-    id: "livebus-tracker",
+    id:    "livebus-tracker",
     title: "LiveBus Tracker",
     description:
       "Real-time GPS tracking platform streaming locations every 10s via Socket.IO & Redis Pub/Sub, with a FastAPI microservice using Gradient Boosting & Kalman Filter for 20s GPS outage recovery.",
@@ -28,7 +29,7 @@ const projects: Project[] = [
     icon: "location-outline",
   },
   {
-    id: "fraud-intelligence",
+    id:    "fraud-intelligence",
     title: "Fraud Intelligence",
     description:
       "Fraud detection system with a PyTorch Autoencoder achieving 99.2% AUC-ROC, plus a LangChain agent using ChromaDB, PostgreSQL, and reputation checks for automated investigations.",
@@ -43,7 +44,7 @@ const projects: Project[] = [
     icon: "search-outline",
   },
   {
-    id: "hireone-ats",
+    id:    "hireone-ats",
     title: "HireOne ATS",
     description:
       "AI-powered Applicant Tracking System that streamlines recruitment with job postings, candidate pipelines, resume parsing, NLP-based skill extraction, and TF-IDF matching to evaluate resume relevance against job descriptions.",
@@ -59,7 +60,7 @@ const projects: Project[] = [
     icon: "document-text-outline",
   },
   {
-    id: "strmix-live",
+    id:    "strmix-live",
     title: "Strmix Live",
     description:
       "Real-time live streaming platform with interactive viewer experiences, low-latency media delivery, live chat, and scalable communication powered by GetStream.io and Socket.IO.",
@@ -76,7 +77,6 @@ const projects: Project[] = [
 ];
 
 
-// Name -> Simple Icons slug
 const TECH_ICON_SLUGS: Record<string, string> = {
   "Node.js": "nodedotjs",
   "Express.js": "express",
@@ -98,6 +98,7 @@ const TECH_ICON_SLUGS: Record<string, string> = {
   ChromaDB: "chromadb",
 };
 
+
 const getTechIconUrl = (tech: string) => {
   const slug = TECH_ICON_SLUGS[tech];
 
@@ -110,8 +111,10 @@ interface ProjectsProps {
   isActive: boolean;
 }
 
+
 const Projects = ({ isActive }: ProjectsProps) => {
   return (
+    
     <article
       className={`projects${isActive ? " active" : ""}`}
       data-page="projects"
@@ -122,7 +125,7 @@ const Projects = ({ isActive }: ProjectsProps) => {
 
       <section className="projects-text">
         <p>
-A showcase of intelligent systems, scalable applications, and full-stack products engineered to solve real-world problems with precision and purpose.
+A showcase of intelligent systems, scalable applications and full-stack products engineered to solve real-world problems.
         </p>
       </section>
 

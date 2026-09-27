@@ -1,57 +1,62 @@
 import "../styles/About.css";
 
+
 interface ServiceItem {
-  icon: string; // built-in ion-icon name — same pattern as the sidebar's contact icons
+  icon:  string; 
   title: string;
-  text: string;
+  text:  string;
 }
+
 
 const services: ServiceItem[] = [
   {
-    icon: "hardware-chip-outline",
+    icon:  "hardware-chip-outline",
     title: "AI / ML Systems",
-    text: "ML models and LLM agents with PyTorch, LangChain, and vector databases.",
+    text:  "ML models and LLM agents with PyTorch, LangChain, and vector databases.",
   },
   {
-    icon: "server-outline",
+    icon:  "server-outline",
     title: "Backend Engineering",
-    text: "REST APIs and backend services with Node.js, Express, and FastAPI.",
+    text:  "REST APIs and backend services with Node.js, Express, and FastAPI.",
   },
   {
-    icon: "git-network-outline",
+    icon:  "git-network-outline",
     title: "System Design",
-    text: "Distributed systems, API gateways, and schema design with PostgreSQL & Redis.",
+    text:  "Distributed systems, API gateways, and schema design with PostgreSQL & Redis.",
   },
   {
-    icon: "code-slash-outline",
+    icon:  "code-slash-outline",
     title: "Full-Stack Development",
-    text: "End-to-end web apps with React.js, Node.js, and Express.",
+    text:  "End-to-end web apps with React.js, Node.js, and Express.",
   },
 ];
+
 
 interface TechItem {
-  icon: string; // simple-icons slug, e.g. https://cdn.simpleicons.org/<icon>
-  name: string;
+  icon:  string; 
+  name:  string;
 }
 
-// placeholder stack — swap freely for your real tools
+
 const techStack: TechItem[] = [
-  { icon: "python", name: "Python" },
-  { icon: "pytorch", name: "PyTorch" },
-  { icon: "langchain", name: "LangChain" },
+  { icon: "python",     name: "Python" },
+  { icon: "pytorch",    name: "PyTorch" },
+  { icon: "langchain",  name: "LangChain" },
   { icon: "typescript", name: "TypeScript" },
-  { icon: "react", name: "React" },
-  { icon: "nodedotjs", name: "Node.js" },
+  { icon: "react",      name: "React" },
+  { icon: "nodedotjs",  name: "Node.js" },
 ];
 
+
 const techStack2: TechItem[] = [
-  { icon: "express", name: "Express" },
-  { icon: "fastapi", name: "FastAPI" },
+  { icon: "express",    name: "Express" },
+  { icon: "fastapi",    name: "FastAPI" },
   { icon: "postgresql", name: "PostgreSQL" },
-  { icon: "redis", name: "Redis" },
-  { icon: "docker", name: "Docker" },
-  { icon: "git", name: "Git" },
+  { icon: "redis",      name: "Redis" },
+  { icon: "docker",     name: "Docker" },
+  { icon: "git",        name: "Git" },
 ];
+
 
 const renderTechRow = (items: TechItem[], keyPrefix: string) =>
   [...items, ...items].map((tech, index) => (
@@ -66,12 +71,15 @@ const renderTechRow = (items: TechItem[], keyPrefix: string) =>
     </div>
   ));
 
+
 interface AboutProps {
   isActive: boolean;
 }
 
+
 const About = ({ isActive }: AboutProps) => {
   return (
+
     <article className={`about${isActive ? " active" : ""}`} data-page="about">
       <header>
         <h2 className="h2 article-title">About me</h2>
@@ -80,26 +88,25 @@ const About = ({ isActive }: AboutProps) => {
       <section className="about-text">
         <p>
           AI/ML Developer & Backend Engineer focused on building intelligent,
-          scalable, and production-ready systems. I combine software engineering
+          scalable and production-ready systems. I combine software engineering
           with intelligent technologies to turn complex problems into practical solutions.
         </p>
 
         <p>
           I'm part of the <strong>Class of 2027 at IIIT Bhubaneswar</strong>,
-          exploring AI/ML, backend engineering, system design, and scalable web
+          exploring AI/ML, backend engineering, system design and scalable web
           applications. I enjoy solving challenging problems and turning ideas
           into impactful products.
         </p>
 
         <p>
-          I build with purpose, solve with curiosity, and continuously explore
+          I build with purpose, solve with curiosity and continuously explore
           what's possible at the intersection of software engineering and AI.
           I strive to write clean, efficient code and build solutions that create real-world impact.
-          I'm always driven to learn, experiment, and turn challenging ideas into reliable solutions.
+          I'm always driven to learn, experiment and turn challenging ideas into reliable solutions.
         </p>
       </section>
 
-      {/* service */}
       <section className="service">
         <h3 className="h3 service-title">What i'm doing</h3>
 
@@ -119,7 +126,6 @@ const About = ({ isActive }: AboutProps) => {
         </ul>
       </section>
 
-      {/* tech stack */}
       <section className="tech-stack">
         <h3 className="h3 tech-stack-title">Tech Stack</h3>
 

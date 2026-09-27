@@ -6,11 +6,6 @@
   margin-bottom: 34px;
 }
 
-/* =========================================
-   ACHIEVEMENTS — vertical timeline
-   (justified because the content is genuinely
-   chronological, not decoration for its own sake)
-========================================= */
 .achievements-grid {
   display: flex;
   flex-direction: column;
@@ -44,7 +39,9 @@
   padding: 18px;
   border-radius: 14px;
   box-shadow: var(--shadow-2);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 .achievement-card::before {
@@ -52,6 +49,8 @@
   position: absolute;
   inset: 1px;
   background: var(--bg-gradient-jet);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
   border-radius: inherit;
   z-index: -1;
   transition: box-shadow 0.25s ease;
@@ -67,7 +66,11 @@
   border-radius: 50%;
   background: var(--orange-yellow-crayola);
   box-shadow: 0 0 0 4px
-    color-mix(in srgb, var(--orange-yellow-crayola) 18%, var(--smoky-black, #0f0f0f) 82%);
+    color-mix(
+      in srgb,
+      var(--orange-yellow-crayola) 18%,
+      var(--smoky-black, #0f0f0f) 82%
+    );
 }
 
 .achievement-card:hover {
@@ -87,19 +90,23 @@
   height: 40px;
   border-radius: 50%;
   background: var(--eerie-black-1);
-  border: 1px solid color-mix(in srgb, var(--orange-yellow-crayola) 22%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--orange-yellow-crayola) 22%, transparent);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
   color: var(--orange-yellow-crayola);
   box-shadow: var(--shadow-1);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .achievement-card:hover .achievement-icon-box {
   transform: scale(1.06);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--orange-yellow-crayola) 14%, transparent),
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--orange-yellow-crayola) 14%, transparent),
     var(--shadow-1);
 }
 
@@ -151,11 +158,6 @@
   max-width: 62ch;
 }
 
-/* =========================================
-   CERTIFICATES — quiet, scannable rows
-   (deliberately not a repeat of the card kit
-   above, so the two sections read differently)
-========================================= */
 .certificates-header {
   margin-top: 46px;
   margin-bottom: 6px;
@@ -170,7 +172,8 @@
   box-shadow: none;
   border-radius: 10px;
   padding: 16px 10px;
-  border-bottom: 1px solid color-mix(in srgb, var(--light-gray) 12%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--light-gray) 12%, transparent);
   align-items: center;
   transition: background 0.2s ease;
 }
@@ -279,9 +282,6 @@
   box-shadow: var(--shadow-1);
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
 @media (min-width: 580px) {
   .achievement-icon-box {
     width: 48px;

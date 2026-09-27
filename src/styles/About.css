@@ -13,13 +13,6 @@
   margin-bottom: 15px;
 }
 
-.about-text p:first-child {
-  color: var(--white-2);
-  font-size: 1.05em;
-  font-weight: var(--fw-400);
-  line-height: 1.65;
-}
-
 .service {
   margin-bottom: 35px;
 }
@@ -41,7 +34,9 @@
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .service-item::before {
@@ -49,6 +44,8 @@
   position: absolute;
   inset: 1px;
   background: var(--bg-gradient-jet);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
   border-radius: inherit;
   z-index: -1;
   transition: box-shadow 0.3s ease;
@@ -74,14 +71,22 @@
   align-items: center;
   font-size: 22px;
   color: var(--orange-yellow-crayola);
-  background: color-mix(in srgb, var(--orange-yellow-crayola) 10%, var(--eerie-black-1));
-  border: 1px solid color-mix(in srgb, var(--orange-yellow-crayola) 22%, transparent);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: color-mix(
+    in srgb,
+    var(--orange-yellow-crayola) 10%,
+    var(--eerie-black-1)
+  );
+  border: 1px solid
+    color-mix(in srgb, var(--orange-yellow-crayola) 22%, transparent);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .service-item:hover .service-icon-box {
   transform: scale(1.06);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--orange-yellow-crayola) 14%, transparent);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--orange-yellow-crayola) 14%, transparent);
 }
 
 .service-content-box {
@@ -99,9 +104,6 @@
   line-height: 1.6;
 }
 
-/* =========================================
-   TECH STACK
-========================================= */
 .tech-stack {
   margin-bottom: 35px;
 }
@@ -159,7 +161,9 @@
   background: var(--border-gradient-onyx);
   box-shadow: var(--shadow-2);
   z-index: 1;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .tech-pill::before {
@@ -167,6 +171,8 @@
   position: absolute;
   inset: 1px;
   background: var(--bg-gradient-jet);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-radius: inherit;
   z-index: -1;
 }
@@ -214,9 +220,6 @@
   }
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
 @media (min-width: 580px) {
   .about .article-title {
     margin-bottom: 20px;

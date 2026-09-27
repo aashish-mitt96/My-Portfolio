@@ -1,9 +1,12 @@
 .sidebar {
   background: var(--eerie-black-2);
+  backdrop-filter: blur(22px) saturate(105%);
+  -webkit-backdrop-filter: blur(22px) saturate(105%);
   border: 1px solid var(--jet);
   border-radius: 20px;
   padding: 15px;
   box-shadow: var(--shadow-1);
+  position: relative;
   z-index: 1;
 
   margin-bottom: 15px;
@@ -24,25 +27,22 @@
   gap: 15px;
 }
 
-/* =========================================
-   AVATAR
-   Crisp border + a soft, low-opacity accent glow
-   ring around it (not a hard second border, so it
-   doesn't read as "thick" the way the old margin
-   trick did).
-========================================= */
 .avatar-box {
   flex-shrink: 0;
   border-radius: 16px;
   overflow: hidden;
   border: 2px solid var(--onyx);
-  box-shadow: var(--shadow-2), 0 0 0 4px hsla(141, 94%, 73%, 0.08);
+  box-shadow:
+    var(--shadow-2),
+    0 0 0 4px hsla(178, 75%, 58%, 0.08);
   transition: var(--transition-1);
 }
 
 .avatar-box:hover {
   border-color: var(--vegas-gold);
-  box-shadow: var(--shadow-2), 0 0 0 4px hsla(141, 94%, 73%, 0.16);
+  box-shadow:
+    var(--shadow-2),
+    0 0 0 4px hsla(178, 75%, 58%, 0.16);
 }
 
 .avatar-box img {
@@ -166,7 +166,8 @@
 
 .contact-title {
   color: var(--light-gray-70);
-  font-size: var(--fs-8);
+  font-size: 9.5px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
   margin-bottom: 2px;
 }
@@ -192,10 +193,6 @@
   font-style: normal;
 }
 
-/* =========================================
-   SOCIALS
-   Chip-style buttons instead of bare icons.
-========================================= */
 .social-list {
   display: flex;
   justify-content: flex-start;
@@ -223,11 +220,6 @@
   transform: translateY(-2px);
 }
 
-/* Used for brand icons Ionicons doesn't ship (e.g. LeetCode).
-   The external SVG is used purely as a mask shape, filled with
-   currentColor, so it sizes and recolors exactly like the
-   ion-icon-based social icons above — regardless of whatever
-   color happens to be baked into the source SVG itself. */
 .social-icon-mask {
   display: block;
   width: 17px;
@@ -241,10 +233,12 @@
   -webkit-mask-position: center;
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
 @media (min-width: 580px) {
+  .contact-title {
+    font-size: 11px;
+    letter-spacing: 0.4px;
+  }
+
   .sidebar {
     width: 520px;
     margin-inline: auto;
@@ -265,11 +259,15 @@
   .avatar-box {
     border-radius: 20px;
     border-width: 3px;
-    box-shadow: var(--shadow-2), 0 0 0 5px hsla(141, 94%, 73%, 0.08);
+    box-shadow:
+      var(--shadow-2),
+      0 0 0 5px hsla(178, 75%, 58%, 0.08);
   }
 
   .avatar-box:hover {
-    box-shadow: var(--shadow-2), 0 0 0 5px hsla(141, 94%, 73%, 0.16);
+    box-shadow:
+      var(--shadow-2),
+      0 0 0 5px hsla(178, 75%, 58%, 0.16);
   }
 
   .avatar-box img {
@@ -346,11 +344,15 @@
   .avatar-box {
     border-radius: 24px;
     border-width: 3px;
-    box-shadow: var(--shadow-2), 0 0 0 6px hsla(141, 94%, 73%, 0.08);
+    box-shadow:
+      var(--shadow-2),
+      0 0 0 6px hsla(178, 75%, 58%, 0.08);
   }
 
   .avatar-box:hover {
-    box-shadow: var(--shadow-2), 0 0 0 6px hsla(141, 94%, 73%, 0.16);
+    box-shadow:
+      var(--shadow-2),
+      0 0 0 6px hsla(178, 75%, 58%, 0.16);
   }
 
   .avatar-box img {
